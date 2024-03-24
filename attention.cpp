@@ -24,8 +24,8 @@
 // }
 
 void layerNorm_Atten(
-    hls::stream<float_pack> &input,
-    hls::stream<float_pack> &output)
+    hls::stream<int8_pack> &input,
+    hls::stream<int8_pack> &output)
 {
     const float gamma[EMBEDDING_SIZE] = {1};
     const float beta[EMBEDDING_SIZE] = {0};
@@ -33,10 +33,10 @@ void layerNorm_Atten(
     float mean[PROCESSING_NUM] = {0};
     float var[PROCESSING_NUM] = {0};
 
-    float_pack buffer[EMBEDDING_SIZE];
+    int8_pack buffer[EMBEDDING_SIZE];
 
-    float_pack data_pack_in;
-    float_pack data_pack_out;
+    int8_pack data_pack_in;
+    int8_pack data_pack_out;
 
 layerNorm_Attn_Prepare:
     for (int i_emb = 0; i_emb < EMBEDDING_SIZE; i_emb++)
@@ -45,7 +45,8 @@ layerNorm_Attn_Prepare:
         for (int i_pack = 0; i_pack < PROCESSING_NUM; i_pack++)
         {
 #pragma HLS PIPELINE II = 1
-            auto data = data_pack_in[i_pack];
+            // run at int mode
+            int8_t data = data_pack_in[i_pack];
             buffer[i_emb][i_pack] = data;
             mean[i_pack] += data;
             var[i_pack] += data * data;
@@ -100,8 +101,46 @@ void streamCopyQKV(
 
 void compute_Q(
   hls::stream<int8_pack>& inp,
-  int8_pack * W,
   hls::stream<int8_pack>& outp,
+  int8_pack * W,
+  int pack_seq_offset,
+  int layer
+) { 
+#pragma HLS INTERFACE mode=m_axi port=W offset=slave bundle=gmem0 max_widen_bitwidth=512  latency = 1
+	int8_pack inp_buf[EMBEDDING_SIZE];
+	const float s[EMBEDDING_SIZE] = {1.0};
+	const int32_t B[EMBEDDING_SIZE] = {1};
+
+  l_j1: for (int j1 = 0; j1 < EMBEDDING_SIZE; j1++) {    // L19
+    #pragma HLS pipeline II=1
+    inp_buf[j1] = inp.read();
+  }
+  gemm_systolic_array_qkv(inp_buf, W, B, s, outp, pack_seq_offset);
+}
+
+void compute_K(
+  hls::stream<int8_pack>& inp,
+  hls::stream<int8_pack>& outp,
+  int8_pack * W,
+  int pack_seq_offset,
+  int layer
+) { 
+#pragma HLS INTERFACE mode=m_axi port=W offset=slave bundle=gmem0 max_widen_bitwidth=512  latency = 1
+	int8_pack inp_buf[EMBEDDING_SIZE];
+	const float s[EMBEDDING_SIZE] = {1.0};
+	const int32_t B[EMBEDDING_SIZE] = {1};
+
+  l_j1: for (int j1 = 0; j1 < EMBEDDING_SIZE; j1++) {    // L19
+    #pragma HLS pipeline II=1
+    inp_buf[j1] = inp.read();
+  }
+  gemm_systolic_array_qkv(inp_buf, W, B, s, outp, pack_seq_offset);
+}
+
+void compute_V(
+  hls::stream<int8_pack>& inp,
+  hls::stream<int8_pack>& outp,
+  int8_pack * W,
   int pack_seq_offset,
   int layer
 ) { 
@@ -118,6 +157,7 @@ void compute_Q(
 }
 
 
+
 void Vortex(
     int8_pack * token_buffer,
     int8_pack * attention_buffer,
@@ -131,11 +171,14 @@ void Vortex(
     hls::stream<int8_pack> & ring_out
 )
 {
-    token_buffer[0] = attention_buffer[0];
-    q_weight_buffer[0] = k_weight_buffer[0];
-    v_weight_buffer[0] = o_weight_buffer[0];
-    mlp_1_weight_buffer[0] = mlp_2_weight_buffer[0];
-    ring_out.write(ring_in.read());
+    
+    // layerNorm_Atten()
+    
+    // token_buffer[0] = attention_buffer[0];
+    // q_weight_buffer[0] = k_weight_buffer[0];
+    // v_weight_buffer[0] = o_weight_buffer[0];
+    // mlp_1_weight_buffer[0] = mlp_2_weight_buffer[0];
+    // ring_out.write(ring_in.read());
 }
 
 
