@@ -1,0 +1,2 @@
+# This is repo for "LoopLynx: A Scalable Dataflow Architecture for Efficient LLM Inference"
+We provide xclbin files for evaluating per-token latency of GPT-2(345M). The target platfrom is Alveo U50lv. 
