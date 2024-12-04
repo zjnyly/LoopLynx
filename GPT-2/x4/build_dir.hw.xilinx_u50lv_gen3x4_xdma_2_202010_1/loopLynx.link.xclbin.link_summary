@@ -1,0 +1,1620 @@
+<ENTRY>
+{
+ "thisFile": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov 15 02:06:42 2024",
+ "timestampMillis": "1731607602896",
+ "buildStep": {
+  "cmdId": "5e547323-3b1c-46ca-9993-6c6a7cd199b6",
+  "name": "v++",
+  "logFile": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --vivado.prop \"run.impl_1.{STEPS.PLACE_DESIGN.ARGS.MORE OPTIONS}={-retiming}\" --vivado.prop run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true --vivado.prop run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -l --save-temps --kernel_frequency 250 --optimize 3 --config ./connectivity.cfg -t hw --platform xilinx_u50lv_gen3x4_xdma_2_202010_1 --temp_dir ./_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1 -o./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin _x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_0.xo _x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_1.xo ",
+  "args": [
+   "-l",
+   "--save-temps",
+   "--kernel_frequency",
+   "250",
+   "--optimize",
+   "3",
+   "--config",
+   "./connectivity.cfg",
+   "-t",
+   "hw",
+   "--platform",
+   "xilinx_u50lv_gen3x4_xdma_2_202010_1",
+   "--temp_dir",
+   "./_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1",
+   "-o./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin",
+   "_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_0.xo",
+   "_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_1.xo"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/connectivity.cfg",
+    "content": "[connectivity]\n\nslr=loopLynx_0_1:SLR0\nslr=loopLynx_1_1:SLR1\n\n\nstream_connect=loopLynx_0_1.stream_next:loopLynx_1_1.stream_previous:64\nstream_connect=loopLynx_1_1.stream_next:loopLynx_0_1.stream_previous:64\n\nsp=loopLynx_0_1.host_addr:PLRAM[0]\nsp=loopLynx_0_1.w_addr_0:HBM[0]\nsp=loopLynx_0_1.w_addr_1:HBM[1]\nsp=loopLynx_0_1.w_addr_2:HBM[2]\nsp=loopLynx_0_1.w_addr_3:HBM[3]\nsp=loopLynx_0_1.w_addr_4:HBM[4]\nsp=loopLynx_0_1.w_addr_5:HBM[5]\nsp=loopLynx_0_1.w_addr_6:HBM[6]\nsp=loopLynx_0_1.w_addr_7:HBM[7]\n\n\nsp=loopLynx_1_1.host_addr:PLRAM[1]\nsp=loopLynx_1_1.w_addr_0:HBM[16]\nsp=loopLynx_1_1.w_addr_1:HBM[17]\nsp=loopLynx_1_1.w_addr_2:HBM[18]\nsp=loopLynx_1_1.w_addr_3:HBM[19]\nsp=loopLynx_1_1.w_addr_4:HBM[20]\nsp=loopLynx_1_1.w_addr_5:HBM[21]\nsp=loopLynx_1_1.w_addr_6:HBM[22]\nsp=loopLynx_1_1.w_addr_7:HBM[23]\n\n[profile]\nexec=loopLynx_0:loopLynx_0_1:all\nexec=loopLynx_1:loopLynx_1_1:all\n\n# sp=loopLynx_1_1.host_addr:PLRAM[0]\n# sp=loopLynx_1_1.w_addr_0:HBM[4]\n# sp=loopLynx_1_1.w_addr_1:HBM[5]\n# sp=loopLynx_1_1.w_addr_2:HBM[6]\n# sp=loopLynx_1_1.w_addr_3:HBM[7]\n\n# sp=loopLynx_2_1.host_addr:PLRAM[1]\n# sp=loopLynx_2_1.w_addr_0:HBM[8]\n# sp=loopLynx_2_1.w_addr_1:HBM[9]\n# sp=loopLynx_2_1.w_addr_2:HBM[10]\n# sp=loopLynx_2_1.w_addr_3:HBM[11]\n\n# sp=loopLynx_3_1.host_addr:PLRAM[1]\n# sp=loopLynx_3_1.w_addr_0:HBM[12]\n# sp=loopLynx_3_1.w_addr_1:HBM[13]\n# sp=loopLynx_3_1.w_addr_2:HBM[14]\n# sp=loopLynx_3_1.w_addr_3:HBM[15]\n"
+   }
+  ],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:06:42 2024",
+ "timestampMillis": "1731607602896",
+ "status": {
+  "cmdId": "5e547323-3b1c-46ca-9993-6c6a7cd199b6",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Nov 15 02:06:54 2024",
+ "timestampMillis": "1731607614056",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u50lv_gen3x4_xdma_2_202010_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u50lv_gen3x4_xdma_2_202010_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "loopLynx.link",
+    "file": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "loopLynx_0",
+     "file": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_0.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/loopLynx_0/loopLynx_0/cpu_sources/loopLynx.h",
+     "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/loopLynx_0/loopLynx_0/cpu_sources/params.h",
+     "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/loopLynx_0/loopLynx_0/cpu_sources/loopLynx.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "loopLynx_0_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   },
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "loopLynx_1",
+     "file": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_1.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/loopLynx_1/loopLynx_1/cpu_sources/loopLynx.h",
+     "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/loopLynx_1/loopLynx_1/cpu_sources/params.h",
+     "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/loopLynx_1/loopLynx_1/cpu_sources/loopLynx.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "loopLynx_1_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 02:06:54 2024",
+ "timestampMillis": "1731607614665",
+ "buildStep": {
+  "cmdId": "5c96a764-b61a-4711-9e52-04a4bf75db71",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_0.xo --xo /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_1.xo -keep -memory-for-trace HBM[0] --config /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u50lv_gen3x4_xdma_2_202010_1/xilinx_u50lv_gen3x4_xdma_2_202010_1.xpfm --target hw --output_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int --temp_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_0.xo",
+   "--xo",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx_1.xo",
+   "-keep",
+   "-memory-for-trace",
+   "HBM[0]",
+   "--config",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u50lv_gen3x4_xdma_2_202010_1/xilinx_u50lv_gen3x4_xdma_2_202010_1.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int",
+   "--temp_dir",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/syslinkConfig.ini",
+    "content": "sc=loopLynx_0_1.stream_next:loopLynx_1_1.stream_previous:64\nsc=loopLynx_1_1.stream_next:loopLynx_0_1.stream_previous:64\nsp=loopLynx_0_1.host_addr:PLRAM[0]\nsp=loopLynx_0_1.w_addr_0:HBM[0]\nsp=loopLynx_0_1.w_addr_1:HBM[1]\nsp=loopLynx_0_1.w_addr_2:HBM[2]\nsp=loopLynx_0_1.w_addr_3:HBM[3]\nsp=loopLynx_0_1.w_addr_4:HBM[4]\nsp=loopLynx_0_1.w_addr_5:HBM[5]\nsp=loopLynx_0_1.w_addr_6:HBM[6]\nsp=loopLynx_0_1.w_addr_7:HBM[7]\nsp=loopLynx_1_1.host_addr:PLRAM[1]\nsp=loopLynx_1_1.w_addr_0:HBM[16]\nsp=loopLynx_1_1.w_addr_1:HBM[17]\nsp=loopLynx_1_1.w_addr_2:HBM[18]\nsp=loopLynx_1_1.w_addr_3:HBM[19]\nsp=loopLynx_1_1.w_addr_4:HBM[20]\nsp=loopLynx_1_1.w_addr_5:HBM[21]\nsp=loopLynx_1_1.w_addr_6:HBM[22]\nsp=loopLynx_1_1.w_addr_7:HBM[23]\nslr=loopLynx_0_1:SLR0\nslr=loopLynx_1_1:SLR1\n\n"
+   }
+  ],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:06:54 2024",
+ "timestampMillis": "1731607614666",
+ "status": {
+  "cmdId": "5c96a764-b61a-4711-9e52-04a4bf75db71",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:04 2024",
+ "timestampMillis": "1731607624674",
+ "status": {
+  "cmdId": "5c96a764-b61a-4711-9e52-04a4bf75db71",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 02:07:04 2024",
+ "timestampMillis": "1731607624675",
+ "buildStep": {
+  "cmdId": "ae43eebf-7a50-42d3-ba72-8a381869da69",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/sdsl.dat -rtd /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/cf2sw.rtd -nofilter /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/cf2sw_full.rtd -xclbin /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xclbin_orig.xml -o /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/sdsl.dat",
+   "-rtd",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:04 2024",
+ "timestampMillis": "1731607624675",
+ "status": {
+  "cmdId": "ae43eebf-7a50-42d3-ba72-8a381869da69",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:07 2024",
+ "timestampMillis": "1731607627073",
+ "status": {
+  "cmdId": "ae43eebf-7a50-42d3-ba72-8a381869da69",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 02:07:07 2024",
+ "timestampMillis": "1731607627074",
+ "buildStep": {
+  "cmdId": "fe21c3d3-f1a5-4172-b5b4-d1fd25a4c00b",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:07 2024",
+ "timestampMillis": "1731607627074",
+ "status": {
+  "cmdId": "fe21c3d3-f1a5-4172-b5b4-d1fd25a4c00b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 02:07:07 2024",
+ "timestampMillis": "1731607627453",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:07 2024",
+ "timestampMillis": "1731607627453",
+ "status": {
+  "cmdId": "fe21c3d3-f1a5-4172-b5b4-d1fd25a4c00b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 02:07:07 2024",
+ "timestampMillis": "1731607627454",
+ "buildStep": {
+  "cmdId": "4314b460-c02d-4349-9534-533ebed58097",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f xilinx_u50lv_gen3x4_xdma_2_202010_1 -s --kernel_frequency 250 --remote_ip_cache /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/.ipcache --trace_memory HBM[0] --output_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int --log_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/logs/link --report_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link --config /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/vplConfig.ini -k /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link --no-info --iprepo /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/ip_repo/xilinx_com_hls_loopLynx_1_1_0 --iprepo /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/ip_repo/xilinx_com_hls_loopLynx_0_1_0 --messageDb /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/run_link/vpl.pb /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "xilinx_u50lv_gen3x4_xdma_2_202010_1",
+   "-s",
+   "--kernel_frequency",
+   "250",
+   "--remote_ip_cache",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/.ipcache",
+   "--trace_memory",
+   "HBM[0]",
+   "--output_dir",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int",
+   "--log_dir",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/logs/link",
+   "--report_dir",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link",
+   "--config",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/vplConfig.ini",
+   "-k",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link",
+   "--no-info",
+   "--iprepo",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/ip_repo/xilinx_com_hls_loopLynx_1_1_0",
+   "--iprepo",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/ip_repo/xilinx_com_hls_loopLynx_0_1_0",
+   "--messageDb",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/run_link/vpl.pb",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=compiler.vppCurrentWorkingDir=/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug\nmisc=BinaryName=loopLynx.link\n\n[connectivity]\nnk=loopLynx_0:1:loopLynx_0_1\nnk=loopLynx_1:1:loopLynx_1_1\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=run.impl_1.{STEPS.PLACE_DESIGN.ARGS.MORE OPTIONS}={-retiming}\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\n\n"
+   }
+  ],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:07 2024",
+ "timestampMillis": "1731607627454",
+ "status": {
+  "cmdId": "4314b460-c02d-4349-9534-533ebed58097",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov 15 02:07:08 2024",
+ "timestampMillis": "1731607628164",
+ "buildStep": {
+  "cmdId": "d409e06a-577a-4ae1-a180-09c42ad9290b",
+  "name": "vpl",
+  "logFile": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2023.2/bin/unwrapped/lnx64.o/vpl -t hw -f xilinx_u50lv_gen3x4_xdma_2_202010_1 -s --kernel_frequency 250 --remote_ip_cache /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/.ipcache --trace_memory HBM[0] --output_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int --log_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/logs/link --report_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link --config /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/vplConfig.ini -k /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link --no-info --iprepo /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/ip_repo/xilinx_com_hls_loopLynx_1_1_0 --iprepo /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xo/ip_repo/xilinx_com_hls_loopLynx_0_1_0 --messageDb /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/run_link/vpl.pb /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:08 2024",
+ "timestampMillis": "1731607628164",
+ "status": {
+  "cmdId": "d409e06a-577a-4ae1-a180-09c42ad9290b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Fri Nov 15 02:07:10 2024",
+ "timestampMillis": "1731607630278",
+ "vivadoProject": {
+  "openDir": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 02:07:10 2024",
+ "timestampMillis": "1731607630279",
+ "buildStep": {
+  "cmdId": "96ebb1df-53f2-4710-81bc-7807c20b765b",
+  "name": "vivado",
+  "logFile": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:07:10 2024",
+ "timestampMillis": "1731607630279",
+ "status": {
+  "cmdId": "96ebb1df-53f2-4710-81bc-7807c20b765b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 02:07:40 2024",
+ "timestampMillis": "1731607660964",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/debug_ip_layout.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "DEBUG_IP_LAYOUT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 02:09:13 2024",
+ "timestampMillis": "1731607753987",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/automation_summary_pre_synthesis.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov 15 02:21:02 2024",
+ "timestampMillis": "1731608462916",
+ "buildStep": {
+  "cmdId": "7b3e5c3c-2c7a-4d95-a7c1-946e43b93eb2",
+  "name": "vivado.impl",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:21:02 2024",
+ "timestampMillis": "1731608462916",
+ "status": {
+  "cmdId": "7b3e5c3c-2c7a-4d95-a7c1-946e43b93eb2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov 15 02:21:02 2024",
+ "timestampMillis": "1731608462916",
+ "buildStep": {
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66",
+  "name": "vivado.impl.impl_1",
+  "logFile": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl/prj/prj.runs/impl_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 02:21:02 2024",
+ "timestampMillis": "1731608462916",
+ "status": {
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:26:44 2024",
+ "timestampMillis": "1731612404884",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl/prj/prj.runs/impl_1/system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:28:22 2024",
+ "timestampMillis": "1731612502408",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/kernel_service.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:28:22 2024",
+ "timestampMillis": "1731612502409",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/kernel_service.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:32:00 2024",
+ "timestampMillis": "1731612720949",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_FAIL",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:32:00 2024",
+ "timestampMillis": "1731612720951",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_FAIL",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042907",
+ "status": {
+  "cmdId": "96ebb1df-53f2-4710-81bc-7807c20b765b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042922",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042923",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042923",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042924",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042924",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_full_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042924",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042925",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042925",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042925",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042925",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042925",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042926",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042926",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042926",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042926",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_full_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042926",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042946",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_loopLynx_0_1_0_synth_1_ulp_loopLynx_0_1_0_utilization_synth.rpt",
+  "name": "loopLynx_0",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042946",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_hmss_0_0_synth_1_ulp_hmss_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_loopLynx_1_1_0_synth_1_ulp_loopLynx_1_1_0_utilization_synth.rpt",
+  "name": "loopLynx_1",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_xbar_5_synth_1_ulp_xbar_5_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_dpa_hub_0_synth_1_ulp_dpa_hub_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_dpa_trace_s2mm_0_synth_1_ulp_dpa_trace_s2mm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_dpa_mon0_0_synth_1_ulp_dpa_mon0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_dpa_mon1_0_synth_1_ulp_dpa_mon1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_xbar_6_synth_1_ulp_xbar_6_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/bd_85ad_interconnect0_10_0_synth_1_bd_85ad_interconnect0_10_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_m01_regslice_8_synth_1_ulp_m01_regslice_8_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042947",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_auto_cc_2_synth_1_ulp_auto_cc_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042948",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_auto_cc_3_synth_1_ulp_auto_cc_3_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042948",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/bd_85ad_hbm_inst_0_synth_1_bd_85ad_hbm_inst_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042948",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_m02_regslice_0_synth_1_ulp_m02_regslice_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042948",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_m00_regslice_8_synth_1_ulp_m00_regslice_8_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042948",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/bd_85ad_interconnect17_8_0_synth_1_bd_85ad_interconnect17_8_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042948",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/syn/ulp_auto_cc_5_synth_1_ulp_auto_cc_5_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042948",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042951",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042954",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042954",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042958",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042961",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042961",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "38f8a11c-c25d-46ec-8375-9a1b41d09a66"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042971",
+ "status": {
+  "cmdId": "d409e06a-577a-4ae1-a180-09c42ad9290b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042979",
+ "status": {
+  "cmdId": "4314b460-c02d-4349-9534-533ebed58097",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042980",
+ "buildStep": {
+  "cmdId": "28f3e16b-669c-4bab-8422-a1a82d7b4362",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:22 2024",
+ "timestampMillis": "1731613042980",
+ "status": {
+  "cmdId": "28f3e16b-669c-4bab-8422-a1a82d7b4362",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:23 2024",
+ "timestampMillis": "1731613043005",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 03:37:23 2024",
+ "timestampMillis": "1731613043007",
+ "buildStep": {
+  "cmdId": "ffa26577-8e44-4570-858e-3ea9533a9315",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -force-enable-memory HBM[0] -a /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/address_map.xml -sdsl /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/sdsl.dat -xclbin /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xclbin_orig.xml -rtd /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.rtd -o /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.xml",
+  "args": [
+   "-force-enable-memory",
+   "HBM[0]",
+   "-a",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/address_map.xml",
+   "-sdsl",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.rtd",
+   "-o",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:23 2024",
+ "timestampMillis": "1731613043007",
+ "status": {
+  "cmdId": "ffa26577-8e44-4570-858e-3ea9533a9315",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045162",
+ "status": {
+  "cmdId": "ffa26577-8e44-4570-858e-3ea9533a9315",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045163",
+ "buildStep": {
+  "cmdId": "f54bdd17-aba9-4887-8f69-4c8b99ba4116",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.rtd",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045163",
+ "status": {
+  "cmdId": "f54bdd17-aba9-4887-8f69-4c8b99ba4116",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045165",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045165",
+ "status": {
+  "cmdId": "f54bdd17-aba9-4887-8f69-4c8b99ba4116",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045165",
+ "buildStep": {
+  "cmdId": "86138c24-361d-490e-826c-cdc6f36db34c",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeAutomationSummary",
+  "args": [
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/automation_summary.txt"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045165",
+ "status": {
+  "cmdId": "86138c24-361d-490e-826c-cdc6f36db34c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045165",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/automation_summary.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045166",
+ "status": {
+  "cmdId": "86138c24-361d-490e-826c-cdc6f36db34c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045166",
+ "status": {
+  "cmdId": "28f3e16b-669c-4bab-8422-a1a82d7b4362",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045166",
+ "buildStep": {
+  "cmdId": "5bb1a8e2-00cc-4484-8b4f-02b80a1f0764",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section DEBUG_IP_LAYOUT:JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/debug_ip_layout.rtd --add-section BITSTREAM:RAW:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.rtd --append-section :JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link_xml.rtd --add-section BUILD_METADATA:JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.xml --add-section SYSTEM_METADATA:RAW:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u50lv_gen3x4_xdma_2_202010_1 --output /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin",
+  "args": [
+   "--add-section",
+   "DEBUG_IP_LAYOUT:JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/debug_ip_layout.rtd",
+   "--add-section",
+   "BITSTREAM:RAW:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.rtd",
+   "--append-section",
+   ":JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/loopLynx.link.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx_u50lv_gen3x4_xdma_2_202010_1",
+   "--output",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045166",
+ "status": {
+  "cmdId": "5bb1a8e2-00cc-4484-8b4f-02b80a1f0764",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045261",
+ "status": {
+  "cmdId": "5bb1a8e2-00cc-4484-8b4f-02b80a1f0764",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045262",
+ "buildStep": {
+  "cmdId": "261eea3a-686e-4df1-b630-8809a17ca270",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin.info --input /home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin.info",
+   "--input",
+   "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/./build_dir.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/loopLynx.link.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045262",
+ "status": {
+  "cmdId": "261eea3a-686e-4df1-b630-8809a17ca270",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045464",
+ "status": {
+  "cmdId": "261eea3a-686e-4df1-b630-8809a17ca270",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045465",
+ "buildStep": {
+  "cmdId": "8c8fa0f6-d24e-477b-a846-2b2b924e240c",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045465",
+ "status": {
+  "cmdId": "8c8fa0f6-d24e-477b-a846-2b2b924e240c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045466",
+ "status": {
+  "cmdId": "8c8fa0f6-d24e-477b-a846-2b2b924e240c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045628",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/system_estimate_loopLynx.link.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045631",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045631",
+ "status": {
+  "cmdId": "5e547323-3b1c-46ca-9993-6c6a7cd199b6",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045674",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/reports/link/v++_link_loopLynx.link_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 15 03:37:25 2024",
+ "timestampMillis": "1731613045675",
+ "report": {
+  "path": "/home/zjnyly/codegen-uram/GPT-2-x4/GPT-345m-x4_debug/_x.hw.xilinx_u50lv_gen3x4_xdma_2_202010_1/v++_link_loopLynx.link_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
