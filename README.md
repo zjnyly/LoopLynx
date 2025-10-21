@@ -2,7 +2,7 @@
 We provide xclbin files for evaluating per-token latency of GPT-2(345M). The target platfrom is Alveo U50lv. 
 
 # Note
-We have extended this work with larger model support and more fluently hardware pipeline. Please refer to https://github.com/zjnyly/TeraFly to view our open sourced project.
+We have extended this work with larger model support and more fluently hardware pipeline. Please refer to https://github.com/zjnyly/TeraFly to see our open sourced project.
 
 # Cite
 We appreciate for your interest in our work!
